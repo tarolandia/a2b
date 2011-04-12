@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Funny ways to go from A to B</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<style type="text/css" media="all">
+			.done{color:green;}
+			.error{color: red;}
+		</style>
+		<!-- Include required JS files -->
+		<script type="text/javascript" src="shCore.js"></script>
+		<!--
+		At least one brush, here we choose JS. You need to include a brush for every
+		language you want to highlight
+		-->
+		<script type="text/javascript" src="shBrushJScript.js"></script>
+		<!-- Include *at least* the core style and default theme -->
+		<link href="shCore.css" rel="stylesheet" type="text/css" />
+		<link href="shThemeDefault.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<h1>Funny ways to go from A to B</h1>
+		<h2>Rules:</h2>
+		<p>
+		1) Must be funny</br>
+		2) Put "go" and "reset" button
+		</p>
+		
+		<h2>A2B 1: Teleport</h2>
+		<div style="height:50px; width: 100%;position:relative">
+			<div style="position: absolute; left: 10px;">A</div>
+			<div style="position: absolute; left: 400px;">B</div>
+			<div id="box" style="height: 30px;width:30px;position: absolute; left:29px;top:-6px;background:black; background: transparent url(runner.jpg) no-repeat;"></div>
+			<div id="box22" style="display:none;height: 30px;width:30px;position: absolute; left:360px;top:-6px;background:black; background: transparent url(runner.jpg) no-repeat;"></div>
+		</div>
+		<input type="button" value="go!" id="goA2B1" />
+		<input type="button" value="reset" id="resetA2B1" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#box22").css("opacity", "0.0").toggle();
+				$("#goA2B1").click(function(){
+					$("#box").fadeTo("slow", 0.0 , function(){
+						$("#box22").fadeTo("slow", 1 , function(){});
+						
+					});
+				});
+				$("#resetA2B1").click(function(){
+					$("#box22").css("opacity", "0.0");
+					$("#box").css("opacity", "1");
+				});
+	
+			});
+		</script>
+	</body>
+</html>
